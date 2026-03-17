@@ -1,0 +1,181 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    direction: rtl;
+    font-family: "Rakkas", serif;
+    font-weight: 300;
+    font-style: normal;
+    background: linear-gradient(45deg, #240165, #05001c);
+    display: flex;
+    flex-direction: column; /* ترتيب عمودي افتراضي */
+    min-height: 100vh;
+}
+
+/* City Name */
+#cityname {
+    color: blanchedalmond;
+    font-size: 80px;
+    text-align: center;
+    margin: 20px 0 10px 0;
+}
+
+/* Date */
+#hisotry {
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+    color: blanchedalmond;
+}
+
+/* Cards Container */
+div[style*="height: 200px;"] {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* الكروت تتراجع في صفوف عند الشاشات الصغيرة */
+    margin-top: 40px;
+}
+
+/* Card */
+#card {
+    font-size: 20px;
+    width: 12%;
+    min-width: 120px; /* عشان في الموبايل ما يبقاش صغير أوي */
+    height: 180px;
+    background-color: aqua;
+    border-radius: 8px;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Card Header */
+#header {
+    background: linear-gradient(45deg, #4f2a94, #16112e);
+    color: blanchedalmond;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 8px 8px 0 0;
+}
+
+#header h1 {
+    font-size: 20px;
+    font-weight: 200;
+    margin: 0;
+}
+
+/* Time */
+.time {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+/* Centered Select */
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+select {
+    width: 300px;
+    border-radius: 50px;
+    height: 40px;
+    font-size: 18px;
+    font-family: Rakkas, serif;
+    font-weight: 200;
+    color: rgb(0, 0, 0);
+}
+
+/* --- Media Queries للريسبونسف --- */
+
+/* شاشات الموبايل */
+@media (max-width: 768px) {
+    #cityname {
+        font-size: 50px;
+    }
+
+    #hisotry {
+        font-size: 20px;
+    }
+
+    #card {
+        width: 45%; /* الكروت صفين في الموبايل */
+        font-size: 16px;
+        height: 150px;
+    }
+
+    #header h1 {
+        font-size: 16px;
+    }
+
+    .time {
+        font-size: 14px;
+    }
+
+    .center {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        order: 2; /* نخلي select تحت كل الكروت */
+    }
+
+    div[style*="height: 200px;"] {
+        order: 1; /* الكروت فوق */
+    }
+
+    select {
+        width: 80%;
+        font-size: 16px;
+        margin-top: 250px;
+    }
+}
+
+/* شاشات التابلت */
+@media (max-width: 1024px) {
+    #cityname {
+        font-size: 65px;
+    }
+
+    #hisotry {
+        font-size: 25px;
+    }
+
+    #card {
+        width: 22%; /* 4 كروت في الصف */
+        font-size: 18px;
+        height: 160px;
+    }
+
+    #header h1 {
+        font-size: 18px;
+    }
+
+    .time {
+        font-size: 16px;
+    }
+
+    .center {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        order: 2; /* select تحت الكروت */
+    }
+
+    div[style*="height: 200px;"] {
+        order: 1; /* الكروت فوق */
+    }
+
+    select {
+        width: 60%;
+        font-size: 17px;
+        margin-top: 250px;
+    }
+}
